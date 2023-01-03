@@ -31,7 +31,7 @@ SCRIPT_DIR=$(dirname $0)
 if [ $# -eq 1 ]; then MESSAGE=$1; fi
 
 git pull
-git checkout master
+git checkout main
 git add ${SCRIPT_DIR}
 git commit -a -m "${MESSAGE}"
 git push origin main
