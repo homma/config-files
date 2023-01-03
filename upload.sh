@@ -34,5 +34,5 @@ git pull
 git checkout master
 git add ${SCRIPT_DIR}
 git commit -a -m "${MESSAGE}"
-git push origin master
+git push origin main
 
