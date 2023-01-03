@@ -5,26 +5,26 @@
 -- window
 vim.opt.splitright = true
 
--- colorshceme
--- vim.api.nvim_command [[colorscheme desert]]
--- vim.opt.termguicolors = false
+-- color scheme
 vim.cmd 'colorscheme shine'
+-- vim.api.nvim_command 'colorscheme desert'
+-- vim.opt.termguicolors = false
 
 -- clipboard
 -- use OS clipboard with y and p
 vim.opt.clipboard = 'unnamedplus'
 
--- status line
--- do not show status line
+-- disable status line
 vim.opt.laststatus = 0
 
--- search
 -- highlight search
 vim.opt.hlsearch = true
 vim.opt.ignorecase = true
 
--- autoindent
--- below settings do not work
+-- disable autoindent
+vim.cmd 'filetype indent off'
+vim.bo.autoindent = false
+-- below settings did not work
 -- vim.g.did_indent_on = 1
 -- vim.b.did_indent = 1
 -- vim.opt.autoindent = false
@@ -32,24 +32,19 @@ vim.opt.ignorecase = true
 -- vim.opt.cindent = false
 -- vim.opt.indentexpr = ''
 -- vim.opt.paste = true
-
--- succeeded to disable autoindent with below
-vim.cmd 'filetype indent off'
-vim.bo.autoindent = false
 -- vim.wo.breakindent = false
 -- vim.bo.copyindent = false
 -- vim.bo.smartindent = false
 
 -- disable comment auto insertion
--- below does not work
--- vim.bo.formatoptions = ''
--- vim.cmd 'filetype off'
--- below does work
 vim.api.nvim_create_autocmd('BufEnter', {
   callback = function()
     vim.opt.formatoptions = ''
   end,
 })
+-- below settings did not work
+-- vim.bo.formatoptions = ''
+-- vim.cmd 'filetype off'
 
 -- dont need tabs
 vim.opt.expandtab = true
