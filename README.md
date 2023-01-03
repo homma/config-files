@@ -1,2 +1,2 @@
 
-My configurtion files
+My configuration files
