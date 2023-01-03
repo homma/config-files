@@ -1,4 +1,3 @@
-
 -- gui font
 -- vim.opt.guifont = 'Menlo:h12'
 -- vim.opt.guifontwide = 'Menlo:h12'
@@ -25,13 +24,32 @@ vim.opt.hlsearch = true
 vim.opt.ignorecase = true
 
 -- autoindent
--- cannot disable autoindent here -- check :verbose set autoindent?
+-- below settings do not work
 -- vim.g.did_indent_on = 1
+-- vim.b.did_indent = 1
 -- vim.opt.autoindent = false
 -- vim.opt.smartindent = false
 -- vim.opt.cindent = false
 -- vim.opt.indentexpr = ''
 -- vim.opt.paste = true
+
+-- succeeded to disable autoindent with below
+vim.cmd 'filetype indent off'
+vim.bo.autoindent = false
+-- vim.wo.breakindent = false
+-- vim.bo.copyindent = false
+-- vim.bo.smartindent = false
+
+-- disable comment auto insertion
+-- below does not work
+-- vim.bo.formatoptions = ''
+-- vim.cmd 'filetype off'
+-- below does work
+vim.api.nvim_create_autocmd('BufEnter', {
+  callback = function()
+    vim.opt.formatoptions = ''
+  end,
+})
 
 -- dont need tabs
 vim.opt.expandtab = true
@@ -43,7 +61,7 @@ require 'encryption'
 
 -- package
 require 'plugins'
-require('nvim-tree').setup({
+require('nvim-tree').setup {
   renderer = {
     symlink_destination = false,
     icons = {
@@ -52,11 +70,11 @@ require('nvim-tree').setup({
         folder = false,
         folder_arrow = false,
         git = false,
-        modified = false
-      }
-    }
-  }
-})
+        modified = false,
+      },
+    },
+  },
+}
 
 vim.api.nvim_create_user_command('TOpen', 'NvimTreeOpen ~/neovim', {})
 vim.api.nvim_create_user_command('TClose', 'NvimTreeClose', {})

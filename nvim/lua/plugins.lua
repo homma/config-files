@@ -2,7 +2,7 @@
 vim.cmd 'packadd packer.nvim'
 
 -- run :PackerSync after modification
-require'packer'.startup(function()
+require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use 'nvim-tree/nvim-tree.lua'
 
@@ -10,4 +10,5 @@ require'packer'.startup(function()
   -- use 'projekt0n/github-nvim-theme'
 
   -- use 'ii14/neorepl.nvim'
+  -- use 'mhartington/formatter.nvim'
 end)
