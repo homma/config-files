@@ -71,5 +71,5 @@ require('nvim-tree').setup {
   },
 }
 
-vim.api.nvim_create_user_command('TOpen', 'NvimTreeOpen ~/neovim', {})
+vim.api.nvim_create_user_command('TOpen', 'NvimTreeOpen ~/MyProj', {})
 vim.api.nvim_create_user_command('TClose', 'NvimTreeClose', {})
