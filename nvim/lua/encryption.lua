@@ -1,5 +1,6 @@
 -- encrpyt/decrypt *.enc file with openssl command
 vim.api.nvim_create_augroup('encryption', {})
+
 vim.api.nvim_create_autocmd('BufNewFile', {
   group = 'encryption',
   pattern = '*.enc',
@@ -8,11 +9,13 @@ vim.api.nvim_create_autocmd('BufNewFile', {
     let $PASS = inputsecret("Password: ")
   ]],
 })
+
 vim.api.nvim_create_autocmd('BufReadPre', {
   group = 'encryption',
   pattern = '*.enc',
   command = [[setl viminfo= noswapfile]],
 })
+
 vim.api.nvim_create_autocmd('BufReadPost', {
   group = 'encryption',
   pattern = '*.enc',
@@ -25,6 +28,7 @@ vim.api.nvim_create_autocmd('BufReadPost', {
     endif
   ]],
 })
+
 vim.api.nvim_create_autocmd('BufWritePre', {
   group = 'encryption',
   pattern = '*.enc',
@@ -32,6 +36,7 @@ vim.api.nvim_create_autocmd('BufWritePre', {
     %!openssl enc -e -aes-256-cbc -a -pass pass:$PASS
   ]],
 })
+
 vim.api.nvim_create_autocmd('BufWritePost', {
   group = 'encryption',
   pattern = '*.enc',
