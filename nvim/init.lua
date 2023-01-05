@@ -75,4 +75,4 @@ vim.api.nvim_create_user_command('Topen', 'NvimTreeOpen ~/MyProj', {})
 vim.api.nvim_create_user_command('Tclose', 'NvimTreeClose', {})
 
 -- site specific initialize script
-pcall(require, 'site-init')
+-- pcall(require, 'site-init')
