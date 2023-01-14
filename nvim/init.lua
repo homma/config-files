@@ -10,6 +10,7 @@ vim.opt.splitright = true
 
 -- color scheme
 vim.cmd.colorscheme 'myshine256'
+-- vim.cmd.colorscheme 'mysolarized256'
 -- vim.cmd.colorscheme 'shine'
 -- vim.opt.termguicolors = false
 
