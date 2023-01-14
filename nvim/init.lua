@@ -25,7 +25,7 @@ vim.opt.hlsearch = true
 vim.opt.ignorecase = true
 
 -- disable autoindent
-vim.cmd 'filetype indent off'
+vim.cmd.filetype 'indent off'
 vim.bo.autoindent = false
 -- below settings did not work
 -- vim.g.did_indent_on = 1
