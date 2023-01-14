@@ -1,5 +1,6 @@
 -- derived from
 -- https://github.com/altercation/vim-colors-solarized
+-- license: follows the above project
 -- ported to lua
 -- 256 colors only
 
