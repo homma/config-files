@@ -5,6 +5,9 @@
 -- vim.opt.guifont = 'Menlo:h12'
 -- vim.opt.guifontwide = 'Menlo:h12'
 
+-- cursor shape
+vim.opt.guicursor = 'a:block'
+
 -- window
 vim.opt.splitright = true
 
