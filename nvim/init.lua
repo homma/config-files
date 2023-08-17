@@ -63,6 +63,7 @@ vim.opt.tabstop = 1
 vim.opt.shiftwidth = 1
 
 -- keymap
+-- `:help Ctrl-a` can be used to check the default keybind
 
 -- emacs-like insert mode
 vim.keymap.set('i', '<C-a>', '<Home>', { noremap = true })
@@ -71,17 +72,17 @@ vim.keymap.set('i', '<C-b>', '<Left>', { noremap = true })
 vim.keymap.set('i', '<C-f>', '<Right>', { noremap = true })
 vim.keymap.set('i', '<C-p>', '<Up>', { noremap = true })
 vim.keymap.set('i', '<C-n>', '<Down>', { noremap = true })
+-- <C-p> and <C-n> is completion in the default keybind
 -- use <C-x><C-n> and <C-x><C-n> for completion
+vim.keymap.set('i', '<C-d>', '<Del>', { noremap = true })
+-- <C-d> is dedent in the default keybind
+vim.keymap.set('i', '<C-k>', '<C-o>d$', { noremap = true })
+-- <C-k> is digraph in the default keybind
 
--- would like to disable CTRL-@
--- below settings did not work
--- vim.keymap.set('', '<C-@>', '<NOP>', {noremap = true})
--- vim.keymap.set('', '<CTRL-@>', '<NOP>', {noremap = true})
--- vim.keymap.set('', '<Nul>', '<NOP>', {noremap = true})
--- vim.keymap.set('', '<NUL>', '<NOP>', {noremap = true})
--- vim.keymap.set('i', '<CTRL>@', '<NOP>', {noremap = true})
--- vim.keymap.set('', '<CTRL>@', '<NOP>')
--- vim.keymap.set('i', '<nul>', '<nop>', {noremap = true})
+-- disable CTRL-@ (and use it as Esc)
+-- in Neovim, <C-@> does not work
+-- specify <C-space> instead
+vim.keymap.set('i', '<C-space>', '<Esc>', { noremap = true })
 
 -- stop opening command line window with q:
 -- use <C-f> in command line mode to open command line window
