@@ -63,6 +63,16 @@ vim.opt.tabstop = 1
 vim.opt.shiftwidth = 1
 
 -- keymap
+
+-- emacs-like insert mode
+vim.keymap.set('i', '<C-a>', '<Home>', { noremap = true })
+vim.keymap.set('i', '<C-e>', '<End>', { noremap = true })
+vim.keymap.set('i', '<C-b>', '<Left>', { noremap = true })
+vim.keymap.set('i', '<C-f>', '<Right>', { noremap = true })
+vim.keymap.set('i', '<C-p>', '<Up>', { noremap = true })
+vim.keymap.set('i', '<C-n>', '<Down>', { noremap = true })
+-- use <C-x><C-n> and <C-x><C-n> for completion
+
 -- would like to disable CTRL-@
 -- below settings did not work
 -- vim.keymap.set('', '<C-@>', '<NOP>', {noremap = true})
