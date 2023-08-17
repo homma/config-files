@@ -79,6 +79,20 @@ vim.keymap.set('i', '<C-d>', '<Del>', { noremap = true })
 vim.keymap.set('i', '<C-k>', '<C-o>d$', { noremap = true })
 -- <C-k> is digraph in the default keybind
 
+-- indent / dedent
+-- '<' as <C-Char-60> does not work
+-- vim.keymap.set('i', '<C-Char-60>', '<Down>', { noremap = true })
+-- vim.keymap.set('i', '<C-Char-62>', '<Down>', { noremap = true })
+-- vim.keymap.set('i', '<C-lt>', '<Down>', { noremap = true })
+-- vim.keymap.set('i', '<C-gt>', '<Down>', { noremap = true })
+-- <C-Tab> does not work since Tab is already C-i
+-- vim.keymap.set('i', '<C-Tab>', '<Down>', { noremap = true })
+-- vim.keymap.set('i', '<C-S-Tab>', '<Down>', { noremap = true })
+-- <C-S-char> does not work
+-- vim.keymap.set('i', '<C-Shift-t>', '<Down>', { noremap = true })
+-- vim.keymap.set('i', '<C-S-t>', '<Down>', { noremap = true })
+-- vim.keymap.set('i', '<C-Char-84>', '<Down>', { noremap = true })
+
 -- disable CTRL-@ (and use it as Esc)
 -- in Neovim, <C-@> does not work
 -- specify <C-space> instead
