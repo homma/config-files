@@ -64,7 +64,12 @@ vim.opt.shiftwidth = 1
 
 local kopt = { noremap = true };
 
+-- copy all
+vim.keymap.set('n', '<C-a>', 'gg<S-v>Gy', kopt)
+
+-- back to normal mode
 vim.keymap.set('i', '<C-j>', '<Esc>', kopt)
+vim.keymap.set('v', '<C-j>', '<Esc>', kopt)
 
 -- emacs-like insert mode
 ---- move cursor ----
