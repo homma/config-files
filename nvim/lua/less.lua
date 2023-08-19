@@ -1,5 +1,8 @@
 -- author: Daisuke Homma
 
+-- ToDo:
+-- save and restore keymaps using maparg(), mapccheck() and mapset()
+
 local M = {}
 
 M.start_less = function()
