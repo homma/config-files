@@ -62,7 +62,7 @@ vim.opt.shiftwidth = 1
 -- keymap
 -- `:help Ctrl-a` can be used to check the default keybind
 
-local kopt = { noremap = true };
+local kopt = { noremap = true }
 
 -- copy all
 vim.keymap.set('n', '<C-a>', 'gg<S-v>Gy', kopt)
@@ -143,7 +143,9 @@ require('nvim-tree').setup {
 vim.api.nvim_create_user_command('Topen', 'NvimTreeOpen ~/MyProj', {})
 vim.api.nvim_create_user_command('Tclose', 'NvimTreeClose', {})
 
-vim.api.nvim_create_user_command('Less', 'runtime macros/less.vim', {})
+-- less mode
+local less = require 'less'
+vim.api.nvim_create_user_command('Less', less.start_less, {})
 
 -- site specific initialize script
 -- pcall(require, 'site-init')
