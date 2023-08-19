@@ -65,6 +65,8 @@ vim.opt.shiftwidth = 1
 -- keymap
 -- `:help Ctrl-a` can be used to check the default keybind
 
+vim.keymap.set('i', '<C-j>', '<Esc>', { noremap = true })
+
 -- emacs-like insert mode
 ---- move cursor
 vim.keymap.set('i', '<C-a>', '<Home>', { noremap = true })
