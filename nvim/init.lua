@@ -1,6 +1,3 @@
--- ToDo
--- disable Ctrl-@ behavior
-
 -- gui font
 -- vim.opt.guifont = 'Menlo:h12'
 -- vim.opt.guifontwide = 'Menlo:h12'
@@ -65,56 +62,58 @@ vim.opt.shiftwidth = 1
 -- keymap
 -- `:help Ctrl-a` can be used to check the default keybind
 
-vim.keymap.set('i', '<C-j>', '<Esc>', { noremap = true })
+local kopt = { noremap = true };
+
+vim.keymap.set('i', '<C-j>', '<Esc>', kopt)
 
 -- emacs-like insert mode
----- move cursor
-vim.keymap.set('i', '<C-a>', '<Home>', { noremap = true })
-vim.keymap.set('i', '<C-e>', '<End>', { noremap = true })
-vim.keymap.set('i', '<C-b>', '<Left>', { noremap = true })
-vim.keymap.set('i', '<C-f>', '<Right>', { noremap = true })
-vim.keymap.set('i', '<C-p>', '<Up>', { noremap = true })
-vim.keymap.set('i', '<C-n>', '<Down>', { noremap = true })
+---- move cursor ----
+vim.keymap.set('i', '<C-a>', '<Home>', kopt)
+vim.keymap.set('i', '<C-e>', '<End>', kopt)
+vim.keymap.set('i', '<C-b>', '<Left>', kopt)
+vim.keymap.set('i', '<C-f>', '<Right>', kopt)
+vim.keymap.set('i', '<C-p>', '<Up>', kopt)
+vim.keymap.set('i', '<C-n>', '<Down>', kopt)
 -- <C-p> and <C-n> is completion in the default keybind
 -- use <C-x><C-n> and <C-x><C-n> for completion
----- scroll
-vim.keymap.set('i', '<C-l>', '<C-o>zz', { noremap = true })
--- vim.keymap.set('i', '<C-l>', '<C-o>z.', { noremap = true })
----- save
-vim.keymap.set('i', '<C-s>', '<C-o>:write<CR>', { noremap = true })
----- quit
-vim.keymap.set('i', '<C-q>', '<C-o>:quit<CR>', { noremap = true })
----- delete
-vim.keymap.set('i', '<C-d>', '<Del>', { noremap = true })
+---- scroll ----
+vim.keymap.set('i', '<C-l>', '<C-o>zz', kopt)
+-- vim.keymap.set('i', '<C-l>', '<C-o>z.', kopt)
+---- save ----
+vim.keymap.set('i', '<C-s>', '<C-o>:write<CR>', kopt)
+---- quit ----
+vim.keymap.set('i', '<C-q>', '<C-o>:quit<CR>', kopt)
+---- delete ----
+vim.keymap.set('i', '<C-d>', '<Del>', kopt)
 -- <C-d> is dedent in the default keybind
-vim.keymap.set('i', '<C-k>', '<C-o>d$', { noremap = true })
+vim.keymap.set('i', '<C-k>', '<C-o>d$', kopt)
 -- <C-k> is digraph in the default keybind
 
 -- indent / dedent
 -- '<' as <C-Char-60> does not work
--- vim.keymap.set('i', '<C-Char-60>', '<Down>', { noremap = true })
--- vim.keymap.set('i', '<C-Char-62>', '<Down>', { noremap = true })
--- vim.keymap.set('i', '<C-lt>', '<Down>', { noremap = true })
--- vim.keymap.set('i', '<C-gt>', '<Down>', { noremap = true })
+-- vim.keymap.set('i', '<C-Char-60>', '<Down>', kopt)
+-- vim.keymap.set('i', '<C-Char-62>', '<Down>', kopt)
+-- vim.keymap.set('i', '<C-lt>', '<Down>', kopt)
+-- vim.keymap.set('i', '<C-gt>', '<Down>', kopt)
 -- <C-Tab> does not work since Tab is already C-i
--- vim.keymap.set('i', '<C-Tab>', '<Down>', { noremap = true })
--- vim.keymap.set('i', '<C-S-Tab>', '<Down>', { noremap = true })
+-- vim.keymap.set('i', '<C-Tab>', '<Down>', kopt)
+-- vim.keymap.set('i', '<C-S-Tab>', '<Down>', kopt)
 -- <C-S-char> does not work
--- vim.keymap.set('i', '<C-Shift-t>', '<Down>', { noremap = true })
--- vim.keymap.set('i', '<C-S-t>', '<Down>', { noremap = true })
--- vim.keymap.set('i', '<C-Char-84>', '<Down>', { noremap = true })
+-- vim.keymap.set('i', '<C-Shift-t>', '<Down>', kopt)
+-- vim.keymap.set('i', '<C-S-t>', '<Down>', kopt)
+-- vim.keymap.set('i', '<C-Char-84>', '<Down>', kopt)
 
 -- disable CTRL-@ (and use it as Esc)
 -- in Neovim, <C-@> does not work
 -- specify <C-space> instead
-vim.keymap.set('i', '<C-space>', '<Esc>', { noremap = true })
+vim.keymap.set('i', '<C-space>', '<Esc>', kopt)
 
 -- stop opening command line window with q:
 -- use <C-f> in command line mode to open command line window
 -- set Q for macro record
-vim.keymap.set('n', 'Q', 'q', { noremap = true })
+vim.keymap.set('n', 'Q', 'q', kopt)
 -- set q for nop
-vim.keymap.set('n', 'q', '<nop>', { noremap = true })
+vim.keymap.set('n', 'q', '<nop>', kopt)
 
 -- utility
 require 'encryption'
