@@ -21,7 +21,6 @@ M.start_less = function()
   setkey('n', 'j', '<C-e>')
   setkey('n', 'k', '<C-y>')
 
-  vim.opt.readonly = true
   vim.opt.modifiable = false
 end
 
@@ -37,7 +36,6 @@ M.quit_less = function()
   delkey('n', 'k')
 
   vim.opt.modifiable = true
-  vim.opt.readonly = false
 end
 
 return M
