@@ -73,6 +73,8 @@ vim.keymap.set('i', '<C-f>', '<Right>', { noremap = true })
 vim.keymap.set('i', '<C-p>', '<Up>', { noremap = true })
 vim.keymap.set('i', '<C-n>', '<Down>', { noremap = true })
 vim.keymap.set('i', '<C-l>', '<C-o>zz', { noremap = true })
+-- vim.keymap.set('i', '<C-l>', '<C-o>z.', { noremap = true })
+vim.keymap.set('i', '<C-s>', '<C-o>:write<CR>', { noremap = true })
 -- <C-p> and <C-n> is completion in the default keybind
 -- use <C-x><C-n> and <C-x><C-n> for completion
 vim.keymap.set('i', '<C-d>', '<Del>', { noremap = true })
