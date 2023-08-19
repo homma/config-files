@@ -66,17 +66,23 @@ vim.opt.shiftwidth = 1
 -- `:help Ctrl-a` can be used to check the default keybind
 
 -- emacs-like insert mode
+---- move cursor
 vim.keymap.set('i', '<C-a>', '<Home>', { noremap = true })
 vim.keymap.set('i', '<C-e>', '<End>', { noremap = true })
 vim.keymap.set('i', '<C-b>', '<Left>', { noremap = true })
 vim.keymap.set('i', '<C-f>', '<Right>', { noremap = true })
 vim.keymap.set('i', '<C-p>', '<Up>', { noremap = true })
 vim.keymap.set('i', '<C-n>', '<Down>', { noremap = true })
-vim.keymap.set('i', '<C-l>', '<C-o>zz', { noremap = true })
--- vim.keymap.set('i', '<C-l>', '<C-o>z.', { noremap = true })
-vim.keymap.set('i', '<C-s>', '<C-o>:write<CR>', { noremap = true })
 -- <C-p> and <C-n> is completion in the default keybind
 -- use <C-x><C-n> and <C-x><C-n> for completion
+---- scroll
+vim.keymap.set('i', '<C-l>', '<C-o>zz', { noremap = true })
+-- vim.keymap.set('i', '<C-l>', '<C-o>z.', { noremap = true })
+---- save
+vim.keymap.set('i', '<C-s>', '<C-o>:write<CR>', { noremap = true })
+---- quit
+vim.keymap.set('i', '<C-q>', '<C-o>:quit<CR>', { noremap = true })
+---- delete
 vim.keymap.set('i', '<C-d>', '<Del>', { noremap = true })
 -- <C-d> is dedent in the default keybind
 vim.keymap.set('i', '<C-k>', '<C-o>d$', { noremap = true })
