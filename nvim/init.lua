@@ -139,5 +139,7 @@ require('nvim-tree').setup {
 vim.api.nvim_create_user_command('Topen', 'NvimTreeOpen ~/MyProj', {})
 vim.api.nvim_create_user_command('Tclose', 'NvimTreeClose', {})
 
+vim.api.nvim_create_user_command('Less', 'runtime macros/less.vim', {})
+
 -- site specific initialize script
 -- pcall(require, 'site-init')
