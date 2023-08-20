@@ -68,6 +68,7 @@ local kopt = { noremap = true }
 vim.keymap.set('n', '<C-a>', 'gg<S-v>Gy', kopt)
 
 -- back to normal mode
+-- cannot use <C-m> since it's 'return'
 vim.keymap.set('i', '<C-j>', '<Esc>', kopt)
 vim.keymap.set('v', '<C-j>', '<Esc>', kopt)
 
@@ -94,11 +95,18 @@ vim.keymap.set('i', '<C-d>', '<Del>', kopt)
 vim.keymap.set('i', '<C-k>', '<C-o>d$', kopt)
 -- <C-k> is digraph in the default keybind
 
--- emacs-like command mode
+-- emacs-like commandline mode
 vim.keymap.set('c', '<C-a>', '<Home>', kopt)
 vim.keymap.set('c', '<C-e>', '<End>', kopt)
 vim.keymap.set('c', '<C-b>', '<Left>', kopt)
 vim.keymap.set('c', '<C-f>', '<Right>', kopt)
+vim.keymap.set('c', '<C-d>', '<Del>', kopt)
+vim.keymap.set('c', '<C-k>', function()
+  local str = vim.fn.getcmdline()
+  local pos = vim.fn.getcmdpos() - 1
+  local substr = str:sub(0, pos)
+  vim.fn.setcmdline(substr)
+end, kopt)
 
 -- indent / dedent
 -- '<' as <C-Char-60> does not work
