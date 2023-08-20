@@ -104,7 +104,7 @@ vim.keymap.set('c', '<C-d>', '<Del>', kopt)
 vim.keymap.set('c', '<C-k>', function()
   local str = vim.fn.getcmdline()
   local pos = vim.fn.getcmdpos() - 1
-  local substr = str:sub(0, pos)
+  local substr = str:sub(1, pos)
   vim.fn.setcmdline(substr)
 end, kopt)
 
