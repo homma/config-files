@@ -94,6 +94,12 @@ vim.keymap.set('i', '<C-d>', '<Del>', kopt)
 vim.keymap.set('i', '<C-k>', '<C-o>d$', kopt)
 -- <C-k> is digraph in the default keybind
 
+-- emacs-like command mode
+vim.keymap.set('c', '<C-a>', '<Home>', kopt)
+vim.keymap.set('c', '<C-e>', '<End>', kopt)
+vim.keymap.set('c', '<C-b>', '<Left>', kopt)
+vim.keymap.set('c', '<C-f>', '<Right>', kopt)
+
 -- indent / dedent
 -- '<' as <C-Char-60> does not work
 -- vim.keymap.set('i', '<C-Char-60>', '<Down>', kopt)
