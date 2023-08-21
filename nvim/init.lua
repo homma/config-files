@@ -61,6 +61,7 @@ vim.opt.shiftwidth = 1
 
 -- keymap
 -- `:help Ctrl-a` can be used to check the default keybind
+-- `:help keycodes` to check possible inputs
 
 local kopt = { noremap = true }
 
@@ -71,6 +72,10 @@ vim.keymap.set('n', '<C-a>', 'gg<S-v>Gy', kopt)
 -- cannot use <C-m> since it's 'return'
 vim.keymap.set('i', '<C-j>', '<Esc>', kopt)
 vim.keymap.set('v', '<C-j>', '<Esc>', kopt)
+
+-- cannot map <C-CR> nor <S-CR>
+-- vim.keymap.set('i', '<C-CR>', '<Home>', kopt)
+-- vim.keymap.set('i', '<S-CR>', '<Home>', kopt)
 
 -- emacs-like insert mode
 ---- move cursor ----
