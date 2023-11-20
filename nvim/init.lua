@@ -26,14 +26,20 @@ vim.opt.hlsearch = true
 vim.opt.ignorecase = true
 
 -- disable autoindent
-vim.cmd.filetype 'indent off'
+vim.cmd.filetype 'plugin indent off'
+-- vim.cmd.filetype 'off'
+-- vim.cmd.filetype 'indent off'
+-- vim.bo.autoindent = off
 vim.bo.autoindent = false
 -- below settings did not work
 -- vim.g.did_indent_on = 1
 -- vim.b.did_indent = 1
--- vim.opt.autoindent = false
--- vim.opt.smartindent = false
--- vim.opt.cindent = false
+-- vim.opt.autoindent = off
+-- vim.opt.smartindent = off
+-- vim.opt.cindent = off
+vim.opt.autoindent = false
+vim.opt.smartindent = false
+vim.opt.cindent = false
 -- vim.opt.indentexpr = ''
 -- vim.opt.paste = true
 -- vim.wo.breakindent = false
