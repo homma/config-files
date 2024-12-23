@@ -62,8 +62,9 @@ vim.cmd.highlight 'link markdownError Normal'
 
 -- dont need tabs
 vim.opt.expandtab = true
-vim.opt.tabstop = 1
-vim.opt.shiftwidth = 1
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
 
 -- keymap
 -- `:help Ctrl-a` can be used to check the default keybind
