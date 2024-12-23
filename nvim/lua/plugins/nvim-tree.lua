@@ -1,8 +1,8 @@
 return {
-  "nvim-tree/nvim-tree.lua",
-  version = "*",
+  'nvim-tree/nvim-tree.lua',
+  version = '*',
   lazy = false,
   config = function()
-    require("nvim-tree").setup {}
+    require('nvim-tree').setup {}
   end,
 }

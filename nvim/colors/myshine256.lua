@@ -96,7 +96,7 @@ local highlight = {
   ModeMsg = { ctermfg = 16, ctermbg = 231, cterm = NONE },
   Question = { ctermfg = 95, ctermbg = NONE, cterm = NONE },
   Todo = { ctermfg = 16, ctermbg = 226, cterm = NONE },
---  MatchParen = { ctermfg = 231, ctermbg = 217, cterm = NONE },
+  --  MatchParen = { ctermfg = 231, ctermbg = 217, cterm = NONE },
   MatchParen = { ctermfg = 255, ctermbg = 251, cterm = NONE },
   Search = { ctermfg = 231, ctermbg = 55, cterm = NONE },
   IncSearch = { ctermfg = 30, ctermbg = 226, cterm = reverse },

@@ -150,11 +150,14 @@ vim.keymap.set('n', 'q', '<nop>', kopt)
 require 'encryption'
 
 -- package
-require("config.lazy")
+require 'config.lazy'
 
 -- nvim-tree
 vim.api.nvim_create_user_command('Topen', 'NvimTreeOpen ~/MyProj', {})
 vim.api.nvim_create_user_command('Tclose', 'NvimTreeClose', {})
+
+-- lsp
+require('lspconfig').rust_analyzer.setup {}
 
 -- less mode
 local less = require 'less'
