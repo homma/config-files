@@ -149,22 +149,9 @@ vim.keymap.set('n', 'q', '<nop>', kopt)
 require 'encryption'
 
 -- package
-require 'plugins'
-require('nvim-tree').setup {
-  renderer = {
-    symlink_destination = false,
-    icons = {
-      show = {
-        file = false,
-        folder = false,
-        folder_arrow = false,
-        git = false,
-        modified = false,
-      },
-    },
-  },
-}
+require("config.lazy")
 
+-- nvim-tree
 vim.api.nvim_create_user_command('Topen', 'NvimTreeOpen ~/MyProj', {})
 vim.api.nvim_create_user_command('Tclose', 'NvimTreeClose', {})
 
