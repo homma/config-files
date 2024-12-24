@@ -146,6 +146,11 @@ vim.keymap.set('n', 'Q', 'q', kopt)
 -- set q for nop
 vim.keymap.set('n', 'q', '<nop>', kopt)
 
+-- auto format
+vim.keymap.set('n', 'gf', function()
+  vim.lsp.buf.format()
+end, kopt)
+
 -- utility
 require 'encryption'
 
