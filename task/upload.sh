@@ -1,16 +1,13 @@
 #!/bin/sh -x
 
-# @author Daisuke Homma
-
-DATE=`date '+%Y/%m/%d %H:%M'`
+DATE=$(date '+%Y/%m/%d %H:%M')
 MESSAGE="committed on ${DATE}."
-SCRIPT_DIR=$(dirname $0)
+ROOT_DIR=$(dirname $0)/..
 
-if [ $# -eq 1 ]; then MESSAGE=$1; fi
+cd ${ROOT_DIR}
 
 git pull
 git checkout main
-git add ${SCRIPT_DIR}
+git add .
 git commit -a -m "${MESSAGE}"
 git push origin main
-
