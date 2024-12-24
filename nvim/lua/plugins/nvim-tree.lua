@@ -3,6 +3,19 @@ return {
   version = '*',
   lazy = false,
   config = function()
-    require('nvim-tree').setup {}
+    require('nvim-tree').setup {
+      renderer = {
+        symlink_destination = false,
+        icons = {
+          show = {
+            file = false,
+            folder = false,
+            folder_arrow = false,
+            git = false,
+            modified = false,
+          },
+        },
+      },
+    }
   end,
 }
