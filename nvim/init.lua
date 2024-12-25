@@ -146,10 +146,27 @@ vim.keymap.set('n', 'Q', 'q', kopt)
 -- set q for nop
 vim.keymap.set('n', 'q', '<nop>', kopt)
 
+-- lsp
 -- auto format
-vim.keymap.set('n', 'gf', function()
+vim.keymap.set('n', 'glf', function()
   vim.lsp.buf.format()
 end, kopt)
+-- show diagnostics in a floating window
+vim.keymap.set('n', 'gle', function()
+  vim.diagnostic.open_float()
+end, kopt)
+-- toggle diagnostics
+vim.keymap.set('n', 'glt', function()
+  vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+end, kopt)
+-- hide diagnostics
+-- vim.keymap.set('n', 'glh', function()
+--   vim.diagnostic.hide(nil, 0)
+-- end, kopt)
+-- show diagnostics
+-- vim.keymap.set('n', 'gls', function()
+--   vim.diagnostic.show(nil, 0)
+-- end, kopt)
 
 -- utility
 require 'encryption'
@@ -162,7 +179,16 @@ vim.api.nvim_create_user_command('Topen', 'NvimTreeOpen ~/MyProj', {})
 vim.api.nvim_create_user_command('Tclose', 'NvimTreeClose', {})
 
 -- lsp
-require('lspconfig').rust_analyzer.setup {}
+require('lspconfig').rust_analyzer.setup {
+  settings = {
+    ['rust-analyzer'] = {
+      diagnostics = {
+        enable = false,
+      },
+      checkOnSave = true,
+    },
+  },
+}
 
 -- less mode
 local less = require 'less'
